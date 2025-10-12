@@ -1,0 +1,112 @@
+@media print {
+	.nav, .footer, noscript { display:none !important; }
+	body { background:#fff; color:#000; }
+	.container { width:auto; padding:0; }
+	a { color:#000; text-decoration:underline; }
+}
+/* Skip link — better accessibility */
+.skip-link {
+	position: absolute;
+	left: -9999px;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+.skip-link:focus {
+	left: 16px;
+	top: 16px;
+	width: auto;
+	height: auto;
+	padding: 8px 12px;
+	border-radius: 10px;
+	background: var(--btn-bg);
+	color: var(--btn-fg);
+	z-index: 1000;
+	text-decoration: none;
+}
+
+/* ==== THEME TOKENS ==== */
+:root {
+	--bg: #ffffff;
+	--fg: #111111;
+	--muted: #555555;
+	--border: #dddddd;
+	--btn-bg: #111111;
+	--btn-fg: #ffffff;
+	--link: #111111;
+	--max: 1080px;
+}
+
+/* System dark mode fallback */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg: #0b0b0b;
+		--fg: #eaeaea;
+		--muted: #aaaaaa;
+		--border: #333333;
+		--btn-bg: #eaeaea;
+		--btn-fg: #0b0b0b;
+		--link: #eaeaea;
+	}
+}
+
+
+/* ==== BASE STYLES using tokens ==== */
+* { box-sizing: border-box; }
+body {
+	margin: 0;
+	font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Arial;
+	background: var(--bg);
+	color: var(--fg);
+}
+.container {
+	width: min(var(--max), 92vw);
+	margin-inline: auto;
+	padding: 16px;
+}
+.header,
+.footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 16px;
+	flex-wrap: wrap;
+}
+.logo {
+	font-weight: 700;
+	text-decoration: none;
+	color: var(--link);
+	letter-spacing: 0.3px;
+}
+.nav a {
+	margin-left: 16px;
+	text-decoration: none;
+	color: var(--link);
+}
+.btn {
+	padding: 10px 14px;
+	border-radius: 10px;
+	background: var(--btn-bg);
+	color: var(--btn-fg);
+	text-decoration: none;
+}
+.hero {
+	padding: 56px 0;
+	text-align: center;
+}
+h1 {
+	font-size: clamp(28px, 4vw, 44px);
+	margin: 0 0 12px;
+}
+p {
+	margin: 0 0 12px;
+}
+.footer {
+	font-size: 14px;
+	color: var(--muted);
+	border-top: 1px solid var(--border);
+	margin-top: 40px;
+	padding-top: 12px;
+}
+
