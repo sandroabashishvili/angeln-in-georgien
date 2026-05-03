@@ -1,35 +1,215 @@
+<!--
+  ფაილი: gallery.html
+  აღწერა: Galerie-Seite ("Angeln in Georgien")
+  ბოლო ცვლილება: 2025-05-03
+  ავტორი: Sandro
+-->
 <!doctype html>
 <html lang="de">
 <head>
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Angeln in Georgien">
-  <meta name="twitter:description" content="Private Angeltouren in Georgien – Flüsse, Seen und Küste.">
-  <meta name="twitter:image" content="https://sandroabashishvili.github.io/angeln-in-georgien/assets/img/og-cover.png">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SRE45VF2DF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SRE45VF2DF');
+  </script>
+
+  <!-- Charset & Viewport -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Galerie – Angeln in Georgien</title>
+
+  <!-- SEO -->
+  <title>Galerie – Angeln in Georgien | Fotos aus unseren Angeltouren</title>
+  <meta name="description" content="Fotos und Impressionen aus unseren Angeltouren in Georgien – Flüsse, Seen, Fänge und Natur. Lassen Sie sich inspirieren.">
+  <link rel="canonical" href="https://sandroabashishvili.github.io/angeln-in-georgien/gallery.html">
+  <link rel="alternate" hreflang="de" href="https://sandroabashishvili.github.io/angeln-in-georgien/gallery.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Galerie – Angeln in Georgien">
+  <meta property="og:description" content="Fotos und Impressionen aus unseren Angeltouren in Georgien.">
+  <meta property="og:image" content="https://sandroabashishvili.github.io/angeln-in-georgien/assets/img/og-cover.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://sandroabashishvili.github.io/angeln-in-georgien/gallery.html">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Galerie – Angeln in Georgien">
+  <meta name="twitter:description" content="Fotos und Impressionen aus unseren Angeltouren in Georgien.">
+  <meta name="twitter:image" content="https://sandroabashishvili.github.io/angeln-in-georgien/assets/img/og-cover.png">
+
+  <!-- Theme Color -->
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f5f0e8">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#0d1a0f">
+
+  <!-- Favicons -->
+  <link rel="icon" href="/angeln-in-georgien/assets/img/favicon-light.png" type="image/png" sizes="32x32" media="(prefers-color-scheme: light)">
+  <link rel="icon" href="/angeln-in-georgien/assets/img/favicon-dark.png"  type="image/png" sizes="32x32" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="/angeln-in-georgien/assets/img/favicon-light.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="/angeln-in-georgien/assets/img/favicon.ico">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <!-- Base styles -->
   <link rel="stylesheet" href="/angeln-in-georgien/assets/css/base.css">
-  <link rel="preload" as="image" href="assets/img/og-cover.png">
 
-<!-- FAVICONS -->
-<link rel="icon" href="/angeln-in-georgien/assets/img/favicon-light.png" type="image/png" sizes="32x32" media="(prefers-color-scheme: light)">
-<link rel="icon" href="/angeln-in-georgien/assets/img/favicon-dark.png"  type="image/png" sizes="32x32" media="(prefers-color-scheme: dark)">
-<link rel="icon" href="/angeln-in-georgien/assets/img/favicon-light.png" type="image/png" sizes="32x32">
-<link rel="icon" href="/angeln-in-georgien/assets/img/favicon.ico">
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Galerie – Angeln in Georgien",
+    "description": "Fotos und Impressionen aus Angeltouren in Georgien.",
+    "url": "https://sandroabashishvili.github.io/angeln-in-georgien/gallery.html",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Angeln in Georgien",
+      "url": "https://sandroabashishvili.github.io/angeln-in-georgien/"
+    }
+  }
+  </script>
 
+  <style>
+    :root {
+      --forest:   #0d1a0f;
+      --forest2:  #162019;
+      --gold:     #c8973a;
+      --gold-lt:  #e8b85a;
+      --cream:    #f5f0e8;
+      --cream2:   #ede5d4;
+      --ink:      #1a1a18;
+      --muted-lt: #7a7060;
+      --radius:   14px;
+    }
+
+    body {
+      font-family: 'Lato', system-ui, sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+    }
+
+    .page-hero {
+      background: var(--forest);
+      padding: 80px 0 64px;
+      text-align: center;
+    }
+    .page-hero-label {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      padding: 5px 14px;
+      border-radius: 50px;
+      margin-bottom: 24px;
+    }
+    .page-hero h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(32px, 5vw, 60px);
+      color: var(--cream);
+      margin: 0 0 16px;
+      line-height: 1.1;
+    }
+    .page-hero h1 em { font-style: italic; color: var(--gold-lt); }
+    .page-hero p {
+      font-size: 17px;
+      font-weight: 300;
+      color: rgba(245,240,232,.65);
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.65;
+    }
+
+    .coming-soon {
+      padding: 100px 0;
+      text-align: center;
+    }
+    .coming-soon-icon {
+      font-size: 56px;
+      display: block;
+      margin-bottom: 24px;
+    }
+    .coming-soon h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(24px, 3vw, 36px);
+      color: var(--ink);
+      margin: 0 0 14px;
+    }
+    .coming-soon p {
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--muted-lt);
+      max-width: 420px;
+      margin: 0 auto 36px;
+      line-height: 1.65;
+    }
+    .btn-primary {
+      display: inline-block;
+      padding: 14px 32px;
+      border-radius: 50px;
+      background: var(--gold);
+      color: var(--forest);
+      font-weight: 700;
+      font-size: 15px;
+      text-decoration: none;
+      transition: background .2s, transform .15s;
+    }
+    .btn-primary:hover { background: var(--gold-lt); transform: translateY(-2px); }
+
+    @media (max-width: 640px) {
+      .page-hero { padding: 56px 0 48px; }
+      .coming-soon { padding: 64px 0; }
+    }
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Header (dynamisch via includes.js) -->
   <div id="site-header"></div>
-  <main id="main" class="container">
-    <section class="hero" aria-labelledby="hero-title">
-  <h1 id="hero-title">Galerie</h1>
-  <img src="assets/img/og-cover.png" alt="Angeln in Georgien – Banner" style="max-width:100%;height:auto;border-radius:18px;box-shadow:0 2px 16px #0002;margin:24px 0;">
+
+  <main id="main" role="main">
+
+    <!-- PAGE HERO -->
+    <section class="page-hero" aria-labelledby="gallery-title">
+      <div class="container">
+        <span class="page-hero-label">📷 Impressionen</span>
+        <h1 id="gallery-title">Galerie –<br><em>Unsere Touren</em></h1>
+        <p>Eindrücke aus Georgiens Flüssen, Seen und Bergen – direkt aus unseren Angeltouren.</p>
+      </div>
     </section>
+
+    <!-- COMING SOON -->
+    <section class="coming-soon" aria-labelledby="coming-title">
+      <div class="container">
+        <span class="coming-soon-icon">🖼️</span>
+        <h2 id="coming-title">Fotos folgen in Kürze</h2>
+        <p>
+          Wir bereiten unsere besten Bilder für Sie vor.
+          In der Zwischenzeit können Sie uns auf Instagram folgen.
+        </p>
+        <a class="btn-primary"
+           href="https://www.instagram.com/fishing_in_georgia/"
+           target="_blank" rel="noopener">
+          📷 Instagram ansehen
+        </a>
+      </div>
+    </section>
+
   </main>
+
+  <!-- noscript Fallback -->
   <noscript>
     <nav class="nav container">
-  <a href="/angeln-in-georgien/">Start</a>
+      <a href="/angeln-in-georgien/">Start</a>
       <a href="tours.html">Touren</a>
       <a href="gallery.html">Galerie</a>
       <a href="legal/impressum.html">Impressum</a>
@@ -39,9 +219,12 @@
       <p>© 2025 Angeln in Georgien</p>
     </footer>
   </noscript>
-  <script src="assets/js/includes.js" defer></script>
-  <script src="assets/js/main.js" defer></script>
+
+  <!-- Footer (dynamisch via includes.js) -->
   <div id="site-footer"></div>
-  <script src="/angeln-in-georgien/assets/js/includes.js"></script>
+
+  <!-- Scripts — NUR EINMAL laden! -->
+  <script src="/angeln-in-georgien/assets/js/includes.js" defer></script>
+  <script src="/angeln-in-georgien/assets/js/main.js" defer></script>
 </body>
 </html>
