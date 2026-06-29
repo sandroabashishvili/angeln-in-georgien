@@ -2,17 +2,75 @@
 <html lang="de">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="refresh" content="2; url=/angeln-in-georgien/">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Seite nicht gefunden – Angeln in Georgien</title>
-  <meta name="robots" content="noindex">
+  <meta name="description" content="Diese Seite wurde nicht gefunden. Zurueck zu Angeln in Georgien.">
+  <meta name="robots" content="noindex,follow">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="assets/img/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/base.css">
   <style>
-    body { font-family: sans-serif; text-align: center; margin-top: 10vh; }
-    .msg { font-size: 1.5em; margin-bottom: 2em; }
-    a { color: #0077cc; }
+    .not-found {
+      min-height: calc(100vh - 72px);
+      display: grid;
+      place-items: center;
+      padding: 72px 0;
+      background:
+        linear-gradient(90deg, rgba(8, 19, 12, 0.9), rgba(8, 19, 12, 0.62)),
+        url("assets/img/og-cover.png") center/cover;
+      color: var(--cream);
+    }
+
+    .not-found-card {
+      width: min(720px, calc(100vw - 32px));
+      border: 1px solid rgba(246, 240, 229, 0.16);
+      border-radius: var(--radius);
+      background: rgba(8, 19, 12, 0.72);
+      padding: clamp(28px, 5vw, 52px);
+      box-shadow: var(--shadow);
+    }
+
+    .not-found-card h1 {
+      margin: 10px 0 14px;
+      font-family: var(--serif);
+      font-size: clamp(36px, 7vw, 68px);
+      line-height: 1;
+    }
+
+    .not-found-card p {
+      max-width: 560px;
+      color: rgba(246, 240, 229, 0.76);
+      font-size: 17px;
+    }
+
+    .not-found-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
   </style>
 </head>
 <body>
-  <div class="msg">404 – Seite nicht gefunden</div>
-  <div>Du wirst automatisch zur <a href="/angeln-in-georgien/">Startseite</a> weitergeleitet.</div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="site-header"></div>
+  <main id="main" class="not-found" role="main">
+    <section class="not-found-card" aria-labelledby="not-found-title">
+      <span class="eyebrow">404</span>
+      <h1 id="not-found-title">Seite nicht gefunden</h1>
+      <p>Die gesuchte Adresse ist nicht verfuegbar. Vielleicht wurde ein Link falsch geschrieben oder eine alte Seite aufgerufen.</p>
+      <div class="not-found-actions">
+        <a class="button button-primary" href="index.html">Zur Startseite</a>
+        <a class="button button-secondary" href="tours.html">Touren ansehen</a>
+        <a class="button button-secondary" href="gallery.html">Galerie</a>
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <script src="assets/js/includes.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>

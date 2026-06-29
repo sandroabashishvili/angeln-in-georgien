@@ -7,29 +7,20 @@
 <!doctype html>
 <html lang="de">
 <head>
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SRE45VF2DF"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-SRE45VF2DF');
-  </script>
-
   <!-- Charset & Viewport -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
   <!-- SEO -->
-  <title>Angeltouren in Georgien – Tages- & Mehrtagestouren | Angeln in Georgien</title>
-  <meta name="description" content="Unsere Angeltouren in Georgien: Tagestouren, mehrtägige Touren und individuelle Reisepakete. Ausrüstung inklusive, garantierter Fang. Jetzt anfragen.">
+  <title>Saisonale Angelreisen in Georgien – 10-14 Tage in kleinen Gruppen</title>
+  <meta name="description" content="Geplante Angelreisen nach Georgien für kleine Gruppen: Herbst 2026 und Frühjahr 2027, 10-14 Tage, persönliche Planung mit Sandro und lokalen Guides.">
   <link rel="canonical" href="https://sandroabashishvili.github.io/angeln-in-georgien/tours.html">
   <link rel="alternate" hreflang="de" href="https://sandroabashishvili.github.io/angeln-in-georgien/tours.html">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Angeltouren in Georgien – Tages- & Mehrtagestouren">
-  <meta property="og:description" content="Tagestouren, mehrtägige Touren und individuelle Pakete. Ausrüstung inklusive, garantierter Fang.">
+  <meta property="og:title" content="Saisonale Angelreisen in Georgien">
+  <meta property="og:description" content="Kleine Gruppen, 10-14 Tage, Herbst 2026 oder Frühjahr 2027. Persönlich geplant mit Sandro.">
   <meta property="og:image" content="https://sandroabashishvili.github.io/angeln-in-georgien/assets/img/og-cover.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -37,8 +28,8 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Angeltouren in Georgien">
-  <meta name="twitter:description" content="Tagestouren, mehrtägige Touren und individuelle Pakete in Georgien.">
+  <meta name="twitter:title" content="Saisonale Angelreisen in Georgien">
+  <meta name="twitter:description" content="Private 10-14 Tage Angelreisen für kleine Gruppen in Georgien.">
   <meta name="twitter:image" content="https://sandroabashishvili.github.io/angeln-in-georgien/assets/img/og-cover.png">
 
   <!-- Theme Color -->
@@ -46,10 +37,8 @@
   <meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#0d1a0f">
 
   <!-- Favicons -->
-  <link rel="icon" href="/angeln-in-georgien/assets/img/favicon-light.png" type="image/png" sizes="32x32" media="(prefers-color-scheme: light)">
-  <link rel="icon" href="/angeln-in-georgien/assets/img/favicon-dark.png"  type="image/png" sizes="32x32" media="(prefers-color-scheme: dark)">
-  <link rel="icon" href="/angeln-in-georgien/assets/img/favicon-light.png" type="image/png" sizes="32x32">
-  <link rel="icon" href="/angeln-in-georgien/assets/img/favicon.ico">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="assets/img/favicon.ico">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -57,7 +46,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
   <!-- Base styles -->
-  <link rel="stylesheet" href="/angeln-in-georgien/assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/base.css">
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -65,7 +54,7 @@
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Angeltouren in Georgien",
-    "description": "Tagestouren, mehrtägige Touren und individuelle Angelreisen in Georgien.",
+    "description": "Saisonale Angelreisen für kleine Gruppen in Georgien.",
     "url": "https://sandroabashishvili.github.io/angeln-in-georgien/tours.html",
     "isPartOf": {
       "@type": "WebSite",
@@ -86,6 +75,15 @@
       --ink:      #1a1a18;
       --muted-lt: #7a7060;
       --radius:   14px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --cream: #101b13;
+        --cream2: #142218;
+        --ink: #f5f0e8;
+        --muted-lt: rgba(246,240,229,.68);
+      }
     }
 
     body {
@@ -169,9 +167,97 @@
     }
     .btn-primary:hover { background: var(--gold-lt); transform: translateY(-2px); }
 
+    .tour-section {
+      padding: 78px 0;
+    }
+    .tour-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+    .tour-card {
+      display: grid;
+      gap: 18px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--paper);
+      padding: 28px;
+      box-shadow: 0 14px 38px rgba(8, 19, 12, 0.06);
+    }
+    .tour-card h2 {
+      font-family: var(--serif);
+      font-size: 27px;
+      line-height: 1.15;
+      margin: 0;
+      color: var(--ink);
+    }
+    .tour-meta {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .tour-pill {
+      border-radius: 999px;
+      background: rgba(200, 151, 58, 0.13);
+      color: var(--forest);
+      padding: 6px 10px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+    .tour-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+    .tour-list {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      color: var(--ink);
+      font-size: 14px;
+    }
+    .tour-list li::before {
+      content: "•";
+      color: var(--gold);
+      font-weight: 900;
+      margin-right: 8px;
+    }
+    .tour-price {
+      border-top: 1px solid var(--border);
+      padding-top: 16px;
+      color: var(--forest);
+      font-weight: 900;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .tour-card {
+        border-color: rgba(246,240,229,.14);
+        background: rgba(255,255,255,.045);
+      }
+
+      .tour-card h2,
+      .tour-list,
+      .tour-price {
+        color: var(--ink);
+      }
+
+      .tour-pill {
+        color: var(--ink);
+      }
+    }
+    .tour-note {
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
     @media (max-width: 640px) {
       .page-hero { padding: 56px 0 48px; }
-      .coming-soon { padding: 64px 0; }
+      .tour-section { padding: 52px 0; }
+      .tour-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -186,24 +272,67 @@
     <!-- PAGE HERO -->
     <section class="page-hero" aria-labelledby="tours-title">
       <div class="container">
-        <span class="page-hero-label">🎣 Unsere Angebote</span>
-        <h1 id="tours-title">Angeltouren in<br><em>Georgien</em></h1>
-        <p>Tagestouren, mehrtägige Touren und individuelle Pakete – für jeden Angler das Richtige.</p>
+        <span class="page-hero-label">Kleine Gruppen · saisonal geplant</span>
+        <h1 id="tours-title">Angelreisen in<br><em>Georgien</em></h1>
+        <p>Keine tägliche Pauschaltour, sondern wenige persönlich geplante Reisen für 3-4 Gäste.</p>
       </div>
     </section>
 
-    <!-- COMING SOON -->
-    <section class="coming-soon" aria-labelledby="coming-title">
+    <section class="tour-section" aria-labelledby="tour-list-title">
       <div class="container">
-        <span class="coming-soon-icon">🗓️</span>
-        <h2 id="coming-title">Touren werden bald veröffentlicht</h2>
-        <p>
-          Wir stellen gerade unsere Tourpakete zusammen.
-          Schreiben Sie uns direkt – wir planen gerne gemeinsam mit Ihnen.
+        <span class="section-kicker">Geplante Reisefenster</span>
+        <h2 class="section-title" id="tour-list-title">Zwei mögliche Gruppenreisen: Herbst und Frühjahr</h2>
+        <p class="section-lead">
+          Sandro lebt in Deutschland und reist saisonal nach Georgien. Deshalb werden Termine früh abgestimmt:
+          erst wenn eine kleine Gruppe realistisch zusammenpasst, wird Route, Budget und Ablauf final geplant.
         </p>
-        <a class="btn-primary" href="mailto:fishingtoursingeorgia@gmail.com?subject=Angeltour%20Anfrage">
-          Jetzt anfragen
-        </a>
+
+        <div class="tour-grid" style="margin-top: 34px;">
+          <article class="tour-card">
+            <div class="tour-meta">
+              <span class="tour-pill">Herbst 2026</span>
+              <span class="tour-pill">10-14 Tage</span>
+              <span class="tour-pill">3-4 Gäste</span>
+            </div>
+            <h2>Herbstreise: Seen, Flüsse und Reise durch Georgien</h2>
+            <p>
+              Ein erster realistischer Termin für Gäste aus Deutschland. Der Schwerpunkt liegt auf
+              angenehmem Wetter, guter Organisation, Angeltagen und einer echten Georgienreise.
+            </p>
+            <ul class="tour-list">
+              <li>Anreise nach Tbilisi oder Kutaisi nach gemeinsamer Absprache</li>
+              <li>Mehrere Angeltage an Seen und Flüssen, abhängig von Wetter und Wasserstand</li>
+              <li>Begleitung durch Sandro und lokale Unterstützung vor Ort</li>
+              <li>Angeln, Essen, Natur und kleine Reiseetappen kombiniert</li>
+            </ul>
+            <div class="tour-price">Preis und Route nach Gruppengröße und Termin</div>
+          </article>
+
+          <article class="tour-card">
+            <div class="tour-meta">
+              <span class="tour-pill">Frühjahr 2027</span>
+              <span class="tour-pill">10-14 Tage</span>
+              <span class="tour-pill">Voranfrage</span>
+            </div>
+            <h2>Frühjahrsreise: flexible Route nach Saisonstart</h2>
+            <p>
+              Diese Reise ist für Gäste gedacht, die früh planen möchten. Je nach Saison kann der Fokus
+              stärker auf Flüssen, Seen oder einer gemischten Reise liegen.
+            </p>
+            <ul class="tour-list">
+              <li>Vorplanung mehrere Monate vorher, damit Flug und Gruppe sinnvoll passen</li>
+              <li>Route wird erst nach Wasserstand, Wetter und Erfahrung der Gäste bestätigt</li>
+              <li>Für kleine Gruppen, die nicht anonym reisen wollen</li>
+              <li>Details zu Unterkunft, Transport und Ausrüstung werden persönlich geklärt</li>
+            </ul>
+            <div class="tour-price">Noch offen: genaue Daten, Route und Budget</div>
+          </article>
+        </div>
+
+        <p class="tour-note">
+          Dieses Angebot ist bewusst limitiert. Wenn mehrere ernsthafte Anfragen zusammenpassen,
+          wird daraus eine konkrete Reise. Einzelne Tagestouren werden derzeit nicht aktiv verkauft.
+        </p>
       </div>
     </section>
 
@@ -227,7 +356,7 @@
   <div id="site-footer"></div>
 
   <!-- Scripts — NUR EINMAL laden! -->
-  <script src="/angeln-in-georgien/assets/js/includes.js" defer></script>
-  <script src="/angeln-in-georgien/assets/js/main.js" defer></script>
+  <script src="assets/js/includes.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>

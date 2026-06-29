@@ -1,1 +1,1 @@
-console.log('Angeln in Georgien – static site ready');
+document.documentElement.classList.add('js-ready');

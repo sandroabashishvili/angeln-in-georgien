@@ -7,15 +7,6 @@
 <!doctype html>
 <html lang="de">
 <head>
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SRE45VF2DF"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-SRE45VF2DF');
-  </script>
-
   <!-- Charset & Viewport -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -46,10 +37,8 @@
   <meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#0d1a0f">
 
   <!-- Favicons -->
-  <link rel="icon" href="/angeln-in-georgien/assets/img/favicon-light.png" type="image/png" sizes="32x32" media="(prefers-color-scheme: light)">
-  <link rel="icon" href="/angeln-in-georgien/assets/img/favicon-dark.png"  type="image/png" sizes="32x32" media="(prefers-color-scheme: dark)">
-  <link rel="icon" href="/angeln-in-georgien/assets/img/favicon-light.png" type="image/png" sizes="32x32">
-  <link rel="icon" href="/angeln-in-georgien/assets/img/favicon.ico">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="assets/img/favicon.ico">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -57,7 +46,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
   <!-- Base styles -->
-  <link rel="stylesheet" href="/angeln-in-georgien/assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/base.css">
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -86,6 +75,15 @@
       --ink:      #1a1a18;
       --muted-lt: #7a7060;
       --radius:   14px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --cream: #101b13;
+        --cream2: #142218;
+        --ink: #f5f0e8;
+        --muted-lt: rgba(246,240,229,.68);
+      }
     }
 
     body {
@@ -151,6 +149,36 @@
       margin: 0 auto 36px;
       line-height: 1.65;
     }
+
+    .gallery-notes {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin: 34px auto 0;
+      max-width: 880px;
+      text-align: left;
+    }
+
+    .gallery-note {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--paper);
+      padding: 20px;
+    }
+
+    .gallery-note strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: 18px;
+    }
+
+    .gallery-note span {
+      color: var(--muted-lt);
+      font-size: 14px;
+      line-height: 1.55;
+    }
     .btn-primary {
       display: inline-block;
       padding: 14px 32px;
@@ -167,6 +195,19 @@
     @media (max-width: 640px) {
       .page-hero { padding: 56px 0 48px; }
       .coming-soon { padding: 64px 0; }
+      .gallery-notes { grid-template-columns: 1fr; }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .gallery-note {
+        border-color: rgba(246,240,229,.14);
+        background: rgba(255,255,255,.045);
+      }
+
+      .coming-soon h2,
+      .gallery-note strong {
+        color: var(--ink);
+      }
     }
   </style>
 </head>
@@ -191,11 +232,25 @@
     <section class="coming-soon" aria-labelledby="coming-title">
       <div class="container">
         <span class="coming-soon-icon">🖼️</span>
-        <h2 id="coming-title">Fotos folgen in Kürze</h2>
+        <h2 id="coming-title">Galerie wird kuratiert</h2>
         <p>
-          Wir bereiten unsere besten Bilder für Sie vor.
-          In der Zwischenzeit können Sie uns auf Instagram folgen.
+          Die Seite soll echte Eindrücke zeigen: Wasser, Landschaft, Route und Menschen vor Ort.
+          Bis die Auswahl sauber vorbereitet ist, bleibt Instagram die schnellste Vorschau.
         </p>
+        <div class="gallery-notes" aria-label="Was die Galerie zeigen wird">
+          <div class="gallery-note">
+            <strong>Gewässer</strong>
+            <span>Seen, Flüsse und saisonale Bedingungen in Georgien.</span>
+          </div>
+          <div class="gallery-note">
+            <strong>Reisegefühl</strong>
+            <span>Unterwegs sein, Essen, Natur und kleine Gruppen statt Massenprogramm.</span>
+          </div>
+          <div class="gallery-note">
+            <strong>Vor Ort</strong>
+            <span>Lokale Unterstützung, Wege, Vorbereitung und praktische Details.</span>
+          </div>
+        </div>
         <a class="btn-primary"
            href="https://www.instagram.com/fishing_in_georgia/"
            target="_blank" rel="noopener">
@@ -224,7 +279,7 @@
   <div id="site-footer"></div>
 
   <!-- Scripts — NUR EINMAL laden! -->
-  <script src="/angeln-in-georgien/assets/js/includes.js" defer></script>
-  <script src="/angeln-in-georgien/assets/js/main.js" defer></script>
+  <script src="assets/js/includes.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>

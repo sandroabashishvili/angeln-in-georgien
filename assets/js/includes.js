@@ -1,16 +1,21 @@
 
-// assets/js/includes.js
+// File: includes.js
+// Folder: portfolio_projects/angeln-in-georgien/assets/js
+// Created date: 2025-10-12
+// Last updated date: 2026-05-17
+// Author: Codex
+// Purpose: Load shared header/footer partials and normalize root-relative links.
 (function(){
   'use strict';
   if (window.__AIG_BOOTED__) return;
   window.__AIG_BOOTED__ = true;
 
-  // ✅ cache-busting ვერსია — ცვალე როცა partial-ებს ცვლი, განაახლე
-  const __VER__ = '2025-10-12';
+  const __VER__ = '2026-05-17';
 
   if (!window.__AIG_BASE__) {
-    const isGhPages = location.pathname.includes('/angeln-in-georgien/');
-    window.__AIG_BASE__ = isGhPages ? '/angeln-in-georgien/' : '/';
+    const script = document.currentScript || document.querySelector('script[src*="assets/js/includes.js"]');
+    const scriptUrl = new URL(script ? script.getAttribute('src') || 'assets/js/includes.js' : 'assets/js/includes.js', location.href);
+    window.__AIG_BASE__ = new URL('../../', scriptUrl).href;
   }
   const base = window.__AIG_BASE__;
 
@@ -19,7 +24,8 @@
     [...head.querySelectorAll('link[rel="icon"], link[rel="shortcut icon"]')].forEach(n => n.remove());
     const imgBase = `${base}assets/img/`;
     const links = [
-      { rel: 'icon', href: `${imgBase}favicon.ico`, sizes: 'any' },
+      { rel: 'icon', type: 'image/svg+xml', href: `${imgBase}favicon.svg` },
+      { rel: 'alternate icon', href: `${imgBase}favicon.ico`, sizes: 'any' },
       { rel: 'icon', type: 'image/png', href: `${imgBase}favicon-light.png`, media: '(prefers-color-scheme: light)' },
       { rel: 'icon', type: 'image/png', href: `${imgBase}favicon-dark.png`,  media: '(prefers-color-scheme: dark)'  }
     ];
@@ -35,18 +41,44 @@
       const raw = a.getAttribute('href') || '';
       if (/^(https?:|mailto:|tel:)/i.test(raw)) return;
       if (/^(\.\/|\.\.\/)/.test(raw)) return;
-      a.setAttribute('href', `${base}${raw}`);
+      a.setAttribute('href', new URL(raw, base).href);
+    });
+  }
+
+  function markCurrent(scopeEl) {
+    const current = location.href.replace(/\/index\.html$/, '/');
+    scopeEl.querySelectorAll('a[data-root]').forEach(a => {
+      const target = a.href.replace(/\/index\.html$/, '/');
+      if (target === current) {
+        a.setAttribute('aria-current', 'page');
+      }
+    });
+  }
+
+  function initMobileNav(scopeEl) {
+    const toggle = scopeEl.querySelector('.nav-toggle');
+    const nav = scopeEl.querySelector('#site-nav');
+    if (!toggle || !nav) return;
+    toggle.addEventListener('click', () => {
+      const isOpen = scopeEl.classList.toggle('nav-open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    nav.addEventListener('click', event => {
+      if (event.target.closest('a')) {
+        scopeEl.classList.remove('nav-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
     });
   }
 
   Promise.all([
-    fetch(`${base}partials/header.html?v=${__VER__}`).then(r => r.text()),
-    fetch(`${base}partials/footer.html?v=${__VER__}`).then(r => r.text())
+    fetch(new URL(`partials/header.html?v=${__VER__}`, base)).then(r => r.text()),
+    fetch(new URL(`partials/footer.html?v=${__VER__}`, base)).then(r => r.text())
   ]).then(([h, f]) => {
     const headerEl = document.getElementById('site-header');
     const footerEl = document.getElementById('site-footer');
-    if (headerEl) { headerEl.innerHTML = h; prefixRootLinks(headerEl); }
-    if (footerEl) { footerEl.innerHTML = f; prefixRootLinks(footerEl); }
+    if (headerEl) { headerEl.innerHTML = h; prefixRootLinks(headerEl); markCurrent(headerEl); initMobileNav(headerEl); }
+    if (footerEl) { footerEl.innerHTML = f; prefixRootLinks(footerEl); markCurrent(footerEl); }
     ensureFavicons();
   }).catch(err => console.error('Include load error:', err));
 })();

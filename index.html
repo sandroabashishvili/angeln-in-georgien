@@ -7,29 +7,20 @@
 <!doctype html>
 <html lang="de">
 <head>
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SRE45VF2DF"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-SRE45VF2DF');
-  </script>
-
   <!-- Charset & Viewport -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
   <!-- SEO -->
-  <title>Angeln in Georgien – 10-tägige Angeltouren & individuelle Reisen</title>
-  <meta name="description" content="Mehrtägige Angeltouren in Georgien: Frühjahrs- & Herbsttouren + individuelle Planung. Deutschsprachige Begleitung, Ausrüstung inklusive. Jetzt anfragen.">
+  <title>Angeln in Georgien – private saisonale Angelreisen mit Sandro</title>
+  <meta name="description" content="Private Angelreisen nach Georgien für kleine Gruppen: 10-14 Tage im Frühjahr oder Herbst, persönliche Planung mit Sandro aus Deutschland und lokalen Guides in Georgien.">
   <link rel="canonical" href="https://sandroabashishvili.github.io/angeln-in-georgien/">
   <link rel="alternate" hreflang="de" href="https://sandroabashishvili.github.io/angeln-in-georgien/">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Angeln in Georgien – Mehrtägige Angeltouren">
-  <meta property="og:description" content="10-tägige Frühjahrs- & Herbsttouren plus individuelle Routen. Ausrüstung inklusive. Garantierter Fang.">
+  <meta property="og:title" content="Angeln in Georgien – private saisonale Angelreisen">
+  <meta property="og:description" content="Kleine Gruppen, 10-14 Tage, Frühjahr oder Herbst. Persönliche Planung mit Sandro und lokalen Guides in Georgien.">
   <meta property="og:image" content="https://sandroabashishvili.github.io/angeln-in-georgien/assets/img/og-cover.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -38,7 +29,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Angeln in Georgien">
-  <meta name="twitter:description" content="Private Angeltouren in Georgien – Flüsse, Seen und Küste.">
+  <meta name="twitter:description" content="Private Angelreisen nach Georgien für kleine Gruppen im Frühjahr oder Herbst.">
   <meta name="twitter:image" content="https://sandroabashishvili.github.io/angeln-in-georgien/assets/img/og-cover.png">
 
   <!-- Theme Color -->
@@ -46,10 +37,8 @@
   <meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#0d1a0f">
 
   <!-- Favicons -->
-  <link rel="icon" href="/angeln-in-georgien/assets/img/favicon-light.png" type="image/png" sizes="32x32" media="(prefers-color-scheme: light)">
-  <link rel="icon" href="/angeln-in-georgien/assets/img/favicon-dark.png"  type="image/png" sizes="32x32" media="(prefers-color-scheme: dark)">
-  <link rel="icon" href="/angeln-in-georgien/assets/img/favicon-light.png" type="image/png" sizes="32x32">
-  <link rel="icon" href="/angeln-in-georgien/assets/img/favicon.ico">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="assets/img/favicon.ico">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -60,7 +49,7 @@
   <link rel="preload" as="image" href="assets/img/og-cover.png">
 
   <!-- Base styles -->
-  <link rel="stylesheet" href="/angeln-in-georgien/assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/base.css">
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -97,6 +86,15 @@
       --muted-lt: #7a7060;
       --radius:   14px;
       --shadow:   0 4px 32px rgba(0,0,0,.18);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --cream: #101b13;
+        --cream2: #142218;
+        --ink: #f5f0e8;
+        --muted-lt: rgba(246,240,229,.68);
+      }
     }
 
     /* ── GLOBAL OVERRIDES for this page ── */
@@ -245,7 +243,7 @@
       margin-top: 48px;
     }
     .service-card {
-      background: #fff;
+      background: var(--paper, #fff);
       border-radius: var(--radius);
       padding: 28px 28px 24px;
       border: 1px solid rgba(0,0,0,.07);
@@ -312,7 +310,7 @@
     .team-card {
       border-radius: var(--radius);
       overflow: hidden;
-      background: #fff;
+      background: var(--paper, #fff);
       border: 1px solid rgba(0,0,0,.07);
       transition: box-shadow .2s, transform .2s;
     }
@@ -414,7 +412,7 @@
       margin-top: 40px;
     }
     .contact-card {
-      background: #fff;
+      background: var(--paper, #fff);
       border-radius: var(--radius);
       padding: 24px 32px;
       border: 1px solid rgba(0,0,0,.07);
@@ -428,6 +426,33 @@
     .contact-card-icon { font-size: 28px; margin-bottom: 8px; display: block; }
     .contact-card-label { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--muted-lt); margin-bottom: 4px; }
     .contact-card-val { font-size: 14px; font-weight: 700; color: var(--ink); }
+
+    @media (prefers-color-scheme: dark) {
+      .service-card,
+      .team-card,
+      .contact-card {
+        border-color: rgba(246,240,229,.14);
+        background: rgba(255,255,255,.045);
+      }
+
+      .service-card h3,
+      .team-info h3,
+      .contact-card-val,
+      .contact-section .section-title {
+        color: var(--ink);
+      }
+
+      .contact-section {
+        background: var(--forest2);
+      }
+
+      .contact-section .section-intro,
+      .service-card p,
+      .team-exp,
+      .team-quote {
+        color: var(--muted-lt);
+      }
+    }
 
     /* ── GUARANTEE BAR ── */
     .guarantee-bar {
@@ -450,8 +475,9 @@
       .reviews-grid { grid-template-columns: 1fr; }
     }
   </style>
+  <link rel="stylesheet" href="assets/css/home.css">
 </head>
-<body>
+<body class="aig-home">
   <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- Header (dynamisch via includes.js) -->
@@ -465,11 +491,11 @@
     <section class="hero-wrap" id="hero" aria-labelledby="hero-title">
       <div class="hero-bg" role="presentation"></div>
       <div class="hero-content">
-        <span class="hero-tag">🎣 Georgien · Seit 2015</span>
+        <span class="hero-tag">Georgien · kleine Gruppen · saisonal</span>
         <h1 id="hero-title">Angeln in<br><em>Georgien</em></h1>
         <p class="hero-sub">
-          Mehrtägige Angeltouren an Georgiens schönsten Flüssen und Seen –
-          Ausrüstung inklusive, garantierter Fang, deutschsprachige Begleitung.
+          Eine persönliche Angelreise für kleine Gruppen: 10-14 Tage in Georgien,
+          geplant mit Sandro aus Deutschland und begleitet von lokalen Anglern vor Ort.
         </p>
         <div class="hero-actions">
           <a class="btn-primary" href="#kontakt">Jetzt anfragen</a>
@@ -483,8 +509,8 @@
          GUARANTEE BAR
     ════════════════════════════════ -->
     <div class="guarantee-bar">
-      ✔ Garantierter Fang
-      <span>– andernfalls erhalten Sie Ihr Geld zurück.</span>
+      Limitierte Termine
+      <span>– geplant sind maximal zwei kleine Gruppenreisen pro Saisonjahr.</span>
     </div>
 
     <!-- ════════════════════════════════
@@ -492,53 +518,54 @@
     ════════════════════════════════ -->
     <section id="leistungen" aria-labelledby="leistungen-title">
       <div class="container">
-        <span class="section-label">Was wir bieten</span>
-        <h2 class="section-title" id="leistungen-title">Unsere Leistungen</h2>
+        <span class="section-label">Wie die Reise gedacht ist</span>
+        <h2 class="section-title" id="leistungen-title">Keine Massenreise, sondern eine private Angelwoche</h2>
         <p class="section-intro">
-          Wir sind eines der ersten Unternehmen, das professionelle Angeltouren
-          in Georgien organisiert – für Einzel- und Gruppenreisen, Familien und Profis.
+          Dieses Angebot ist bewusst klein gehalten. Sandro lebt in Deutschland und reist
+          saisonal nach Georgien, um wenige Gäste persönlich zu begleiten und mit lokalen
+          Freunden sichere, flexible Angeltage zu organisieren.
         </p>
 
         <div class="services-grid">
           <div class="service-card">
-            <span class="service-icon">🌅</span>
-            <h3>Eintägige Angeltour</h3>
-            <p>Sie haben nur einen freien Tag? Kein Problem – wir sind von morgens bis abends für Sie bereit und organisieren eine unvergessliche Tagestour.</p>
-          </div>
-          <div class="service-card">
             <span class="service-icon">🗓️</span>
-            <h3>Mehrtägige Angeltour</h3>
-            <p>Wählen Sie aus unseren Vorschlägen oder wir planen gemeinsam Ihre individuelle Angeltour durch Georgien. Flüsse, Seen und Gebirgsquellen warten.</p>
+            <h3>Frühjahrs- oder Herbsttermin</h3>
+            <p>Geplant sind wenige feste Zeitfenster pro Jahr, zum Beispiel im Herbst 2026 oder Frühjahr 2027.</p>
           </div>
           <div class="service-card">
-            <span class="service-icon">👨‍👩‍👧</span>
-            <h3>Angeln mit der Familie</h3>
-            <p>Sie angeln, während Ihre Familie die Schönheit, Kultur und Küche Georgiens genießt. Wir haben die passende Ausstattung für die ganze Familie.</p>
-          </div>
-          <div class="service-card">
-            <span class="service-icon">🏔️</span>
-            <h3>Abgelegene Angelplätze</h3>
-            <p>Wir bringen Sie an Orte, die nur wenige Menschen kennen – an schwer zugängliche Flüsse und Bergseen abseits der ausgetretenen Wege.</p>
-          </div>
-          <div class="service-card">
-            <span class="service-icon">🎒</span>
-            <h3>Ausrüstung inklusive</h3>
-            <p>Alle Kosten für Angelausrüstung und Campingzubehör sind im Preis enthalten. Für Sie fallen keine zusätzlichen Kosten an.</p>
-          </div>
-          <div class="service-card">
-            <span class="service-icon">🐟</span>
-            <h3>Garantierter Fang</h3>
-            <p>Als erfahrene Profis kennen wir Georgiens Gewässer in- und auswendig. Wir garantieren einen guten Fang – oder Ihr Geld zurück.</p>
-          </div>
-          <div class="service-card">
-            <span class="service-icon">⚡</span>
-            <h3>Morgen schon angeln</h3>
-            <p>Wir bieten unkomplizierte Tourbuchung. Spontan entschieden? Morgen kann es schon losgehen.</p>
+            <span class="service-icon">👥</span>
+            <h3>Nur 3-4 Gäste pro Gruppe</h3>
+            <p>Die Gruppe bleibt klein, damit Routen, Angelplätze und Tagesplanung wirklich persönlich bleiben.</p>
           </div>
           <div class="service-card">
             <span class="service-icon">🎣</span>
-            <h3>Alle Angeltechniken</h3>
-            <p>Grundangeln, Feedern, Spinnfischen u. v. m. – in Georgien ist nahezu jede gängige Technik möglich.</p>
+            <h3>Angeln und Reisen kombiniert</h3>
+            <p>Nicht jeder Tag muss gleich aussehen: Angeln, Natur, Essen, Orte und echte georgische Gastfreundschaft gehören zusammen.</p>
+          </div>
+          <div class="service-card">
+            <span class="service-icon">🤝</span>
+            <h3>Lokale Unterstützung vor Ort</h3>
+            <p>In Georgien helfen vertraute lokale Angler wie Levan oder Giorgi bei Gewässern, Wegen und praktischer Organisation.</p>
+          </div>
+          <div class="service-card">
+            <span class="service-icon">🎒</span>
+            <h3>Ausrüstung nach Absprache</h3>
+            <p>Was gestellt wird und was Sie mitbringen sollten, wird vor der Reise klar besprochen.</p>
+          </div>
+          <div class="service-card">
+            <span class="service-icon">📍</span>
+            <h3>Flexible Route statt starrem Paket</h3>
+            <p>Wetter, Wasserstand und Saison entscheiden mit. Die Reise wird vorbereitet, aber vor Ort vernünftig angepasst.</p>
+          </div>
+          <div class="service-card">
+            <span class="service-icon">🛬</span>
+            <h3>Start und Ende klar geplant</h3>
+            <p>Ankunft, Abholung, Reisetage und Rückreise werden vorab sauber abgestimmt.</p>
+          </div>
+          <div class="service-card">
+            <span class="service-icon">💬</span>
+            <h3>Vorher persönlich sprechen</h3>
+            <p>Vor einer Buchung klären wir Erwartungen, Erfahrung, Fitness, Budget und passende Saison.</p>
           </div>
         </div>
       </div>
@@ -580,7 +607,7 @@
         </div>
 
         <p style="margin-top:28px; font-size:14px; color:rgba(245,240,232,.5);">
-          Gruppen von 3 Personen empfehlen wir als ideale Größe – für die besten Ergebnisse und maximalen Spaß.
+          Die genaue Route wird erst nach Termin, Gruppengröße, Wetter und Wasserstand festgelegt.
         </p>
       </div>
     </section>
@@ -590,11 +617,11 @@
     ════════════════════════════════ -->
     <section id="team" aria-labelledby="team-title">
       <div class="container">
-        <span class="section-label">Unsere Guides</span>
-        <h2 class="section-title" id="team-title">Das Team</h2>
+        <span class="section-label">Wer dabei ist</span>
+        <h2 class="section-title" id="team-title">Sandro plant aus Deutschland, lokale Freunde helfen in Georgien</h2>
         <p class="section-intro">
-          Wir angeln seit unserer Kindheit und kennen Georgiens Gewässer wie unsere Westentasche.
-          Jeder Tag einer Tour ist für uns ein Freudentag.
+          Das ist kein großes Reisebüro. Es ist ein kleines persönliches Projekt mit Menschen,
+          die Georgien, Angeln und die Wege vor Ort kennen.
         </p>
 
         <div class="team-grid">
@@ -603,9 +630,9 @@
             <div class="team-photo-placeholder">🎣</div>
             <div class="team-info">
               <h3>Sandro</h3>
-              <span class="team-role">Gründer · Führer · Ausbilder</span>
-              <p class="team-exp">32 Jahre Angelerfahrung</p>
-              <p class="team-quote">„Ich kann nicht ohne Angeln leben – es ist mein Geschäft, mein Hobby und mein Lebensstil."</p>
+              <span class="team-role">Planung · Begleitung · deutschsprachiger Kontakt</span>
+              <p class="team-exp">Lebt in Deutschland, reist saisonal nach Georgien</p>
+              <p class="team-quote">„Ich möchte wenige Gäste ehrlich und persönlich nach Georgien mitnehmen, nicht möglichst viele Touren verkaufen."</p>
             </div>
           </div>
           <!-- Giorgi -->
@@ -613,9 +640,9 @@
             <div class="team-photo-placeholder">🏞️</div>
             <div class="team-info">
               <h3>Giorgi</h3>
-              <span class="team-role">Führer · Ausbilder</span>
-              <p class="team-exp">30 Jahre Angelerfahrung</p>
-              <p class="team-quote">„Für mich geht es beim Angeln nicht nur um den Fischfang, sondern auch um die Beziehungen zu Freunden, Menschen und der Natur."</p>
+              <span class="team-role">Lokale Unterstützung · Gewässer · Wege</span>
+              <p class="team-exp">Unterstützung je nach Route und Termin</p>
+              <p class="team-quote">„Vor Ort zählen Erfahrung, Ruhe und die richtige Entscheidung für den jeweiligen Tag."</p>
             </div>
           </div>
           <!-- Leo -->
@@ -623,65 +650,10 @@
             <div class="team-photo-placeholder">🌊</div>
             <div class="team-info">
               <h3>Leo</h3>
-              <span class="team-role">Führer · Ausbilder</span>
-              <p class="team-exp">25 Jahre Angelerfahrung</p>
-              <p class="team-quote">„Ich liebe das Angeln, weil es mir ein Gefühl der Freiheit gibt – und ich genieße es, dieses Gefühl mit anderen zu teilen."</p>
+              <span class="team-role">Lokale Unterstützung · Organisation</span>
+              <p class="team-exp">Je nach Saison und Verfügbarkeit</p>
+              <p class="team-quote">„Eine gute Reise braucht nicht nur Angelplätze, sondern auch verlässliche Menschen vor Ort."</p>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ════════════════════════════════
-         REZENSIONEN
-    ════════════════════════════════ -->
-    <section id="rezensionen" class="reviews-section dark-section" aria-labelledby="rez-title">
-      <div class="container">
-        <span class="section-label">Kundenstimmen</span>
-        <h2 class="section-title" id="rez-title">Was unsere Gäste sagen</h2>
-        <p class="section-intro">
-          Echte Erfahrungen von Anglern aus Deutschland und aller Welt.
-        </p>
-
-        <div class="reviews-grid">
-          <div class="review-card">
-            <div class="review-stars">★★★★★</div>
-            <p class="review-text">
-              „Ich war geschäftlich in Georgien und hatte noch einen freien Tag.
-              Ich war erstaunt, dass das Team es geschafft hat, in einem Tag
-              eine so tolle Angeltour zu organisieren. Vielen Dank für den
-              schnellen und guten Service!"
-            </p>
-            <span class="review-author">— Geschäftsreisender, Deutschland</span>
-          </div>
-          <div class="review-card">
-            <div class="review-stars">★★★★★</div>
-            <p class="review-text">
-              „Ich reise gerne in verschiedene Länder zum Angeln.
-              Die außergewöhnliche Schönheit der Natur in Georgien –
-              Flüsse, Seen, Wasserfälle, Gebirgsbäche – das muss man
-              gesehen haben."
-            </p>
-            <span class="review-author">— Reiseanglerː, Europa</span>
-          </div>
-          <div class="review-card">
-            <div class="review-stars">★★★★★</div>
-            <p class="review-text">
-              „Ich dachte, ich wüsste alles über das Angeln –
-              aber du hast mich überrascht. Du bist ein echter Profi.
-              Auf Reisen ist es entscheidend, wer einem hilft.
-              Ich bin froh, dass du es warst."
-            </p>
-            <span class="review-author">— Erfahrener Angler</span>
-          </div>
-          <div class="review-card">
-            <div class="review-stars">★★★★★</div>
-            <p class="review-text">
-              „Wenn man mehr bekommt, als man bezahlt hat, ist das fantastisch.
-              Ich bin bereit, Sie jedem und überall zu empfehlen.
-              Weiter so!"
-            </p>
-            <span class="review-author">— Stammkunde</span>
           </div>
         </div>
       </div>
@@ -693,10 +665,11 @@
     <section id="kontakt" class="contact-section" aria-labelledby="kontakt-title">
       <div class="container">
         <span class="section-label">Kontakt & Anfrage</span>
-        <h2 class="section-title" id="kontakt-title">Bereit für Ihre Angeltour?</h2>
+        <h2 class="section-title" id="kontakt-title">Interesse an einer kleinen Gruppenreise?</h2>
         <p class="section-intro">
-          Fragen Sie nach Informationen zur Tour oder lassen Sie uns gemeinsam planen.
-          Wir antworten schnell – auf Deutsch, Englisch oder Georgisch.
+          Schreiben Sie kurz, wann Sie reisen möchten, wie viele Personen dabei wären
+          und welche Art von Angeln Sie interessiert. Danach klären wir realistisch,
+          ob ein Frühjahrs- oder Herbsttermin passt.
         </p>
 
         <div class="hero-actions" style="margin-bottom: 48px;">
@@ -755,7 +728,7 @@
   <div id="site-footer"></div>
 
   <!-- Scripts — NUR EINMAL laden! -->
-  <script src="/angeln-in-georgien/assets/js/includes.js" defer></script>
-  <script src="/angeln-in-georgien/assets/js/main.js" defer></script>
+  <script src="assets/js/includes.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>
