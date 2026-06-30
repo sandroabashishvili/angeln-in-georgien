@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
   <title>Kontakt – Angeln in Georgien</title>
-  <meta name="description" content="Kontakt für private Angelreisen nach Georgien: Anfrage per E-Mail oder Telefon. Termine, Route und Preis werden persönlich abgestimmt.">
+  <meta name="description" content="Kontakt für private Angelreisen nach Georgien: Anfrage per E-Mail. Termine, Route und Preis werden persönlich abgestimmt.">
   <link rel="canonical" href="https://sandroabashishvili.github.io/angeln-in-georgien/contact.html">
   <link rel="alternate" hreflang="de" href="https://sandroabashishvili.github.io/angeln-in-georgien/contact.html">
 
@@ -19,7 +19,7 @@
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Kontakt – Angeln in Georgien">
-  <meta name="twitter:description" content="Kontakt für private Angelreisen nach Georgien per E-Mail oder Telefon.">
+  <meta name="twitter:description" content="Kontakt für private Angelreisen nach Georgien per E-Mail.">
   <meta name="twitter:image" content="https://sandroabashishvili.github.io/angeln-in-georgien/assets/img/hero-georgia-fishing.webp">
 
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#0d1a0f">
@@ -75,7 +75,7 @@
     }
 
     .contact-panel,
-    .contact-method {
+    .contact-note {
       border: 1px solid var(--border);
       border-radius: var(--radius);
       background: var(--paper);
@@ -98,7 +98,8 @@
 
     .contact-panel p,
     .contact-panel li,
-    .contact-method span {
+    .contact-note p,
+    .contact-note li {
       color: var(--muted);
     }
 
@@ -109,44 +110,55 @@
       padding-left: 18px;
     }
 
-    .contact-methods {
+    .contact-note {
       display: grid;
-      grid-template-rows: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .contact-method {
-      display: grid;
-      gap: 8px;
+      gap: 16px;
       align-content: center;
-      min-height: 154px;
-      padding: 24px;
-      text-decoration: none;
+      min-height: 100%;
+      padding: 30px;
       color: var(--ink);
-      transition: transform .16s, border-color .16s;
     }
 
-    .contact-method:hover {
-      transform: translateY(-2px);
-      border-color: rgba(200, 151, 58, 0.55);
+    .contact-note h2 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: 30px;
+      line-height: 1.15;
     }
 
-    .contact-method strong {
+    .contact-note strong {
       font-family: var(--serif);
       font-size: 21px;
       color: var(--ink);
     }
 
-    .contact-method small {
+    .contact-note small {
       color: var(--gold);
       font-weight: 900;
       letter-spacing: 0.08em;
       text-transform: uppercase;
     }
 
+    .contact-note a {
+      color: var(--gold);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .contact-note a:hover {
+      color: var(--gold-strong);
+    }
+
+    .contact-note ul {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding-left: 18px;
+    }
+
     @media (prefers-color-scheme: dark) {
       .contact-panel,
-      .contact-method {
+      .contact-note {
         background: rgba(255,255,255,.045);
         border-color: rgba(246,240,229,.14);
       }
@@ -193,17 +205,22 @@
           </ul>
         </div>
 
-        <div class="contact-methods" aria-label="Kontaktmöglichkeiten">
-          <a class="contact-method" href="mailto:fishingtoursingeorgia@gmail.com?subject=Angeltour%20Anfrage">
-            <small>E-Mail</small>
-            <strong>fishingtoursingeorgia@gmail.com</strong>
-            <span>Am besten mit Zeitraum, Personenanzahl und kurzer Beschreibung der gewünschten Reise.</span>
-          </a>
-          <a class="contact-method" href="tel:+4915211084360">
-            <small>Telefon Deutschland</small>
-            <strong>+49 1521 108 4360</strong>
-            <span>Für kurze Rückfragen oder ein erstes Gespräch.</span>
-          </a>
+        <div class="contact-note" aria-label="Kontakt und aktueller Status">
+          <small>Aktueller Status</small>
+          <h2>Angebot pausiert, Kontakt bleibt offen</h2>
+          <p>
+            Der Anbieter lebt derzeit in Deutschland und klaert organisatorische Unterlagen.
+            Neue Termine werden erst veroeffentlicht, wenn Planung und Rahmenbedingungen sauber geklaert sind.
+          </p>
+          <p>
+            Fuer Rueckfragen oder spaetere Vormerkungen reicht eine kurze E-Mail:
+            <br><strong><a href="mailto:sandroabashishvili@gmail.com?subject=Angeltour%20Anfrage">sandroabashishvili@gmail.com</a></strong>
+          </p>
+          <ul>
+            <li>gewuenschter Reisezeitraum</li>
+            <li>Personenzahl und Erfahrung</li>
+            <li>Interesse an See, Fluss, Bergregion oder leichter Begleitung</li>
+          </ul>
         </div>
       </div>
     </section>

@@ -60,8 +60,7 @@
     "logo": "https://sandroabashishvili.github.io/angeln-in-georgien/assets/img/favicon-light.png",
     "contactPoint": {
       "@type": "ContactPoint",
-      "email": "fishingtoursingeorgia@gmail.com",
-      "telephone": "+49-1521-1084360",
+      "email": "sandroabashishvili@gmail.com",
       "contactType": "customer service",
       "availableLanguage": ["German", "Georgian", "English"]
     },
@@ -393,40 +392,16 @@
     }
     .contact-section .section-title { color: var(--ink); }
     .contact-section .section-intro { margin-inline: auto; color: var(--muted-lt); }
-    .contact-cards {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 40px;
-    }
-    .contact-card {
-      background: var(--paper, #fff);
-      border-radius: var(--radius);
-      padding: 24px 32px;
-      border: 1px solid rgba(0,0,0,.07);
-      text-align: center;
-      text-decoration: none;
-      color: var(--ink);
-      min-width: 200px;
-      transition: box-shadow .2s, transform .2s;
-    }
-    .contact-card:hover { box-shadow: var(--shadow); transform: translateY(-3px); }
-    .contact-card-icon { font-size: 28px; margin-bottom: 8px; display: block; }
-    .contact-card-label { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--muted-lt); margin-bottom: 4px; }
-    .contact-card-val { font-size: 14px; font-weight: 700; color: var(--ink); }
 
     @media (prefers-color-scheme: dark) {
       .service-card,
-      .team-card,
-      .contact-card {
+      .team-card {
         border-color: rgba(246,240,229,.14);
         background: rgba(255,255,255,.045);
       }
 
       .service-card h3,
       .team-info h3,
-      .contact-card-val,
       .contact-section .section-title {
         color: var(--ink);
       }
@@ -653,7 +628,7 @@
 
         <div class="hero-actions" style="margin-bottom: 48px;">
           <a class="btn-primary" style="background:var(--forest);color:#f6f0e5;"
-             href="mailto:fishingtoursingeorgia@gmail.com?subject=Angeltour%20Anfrage">
+             href="mailto:sandroabashishvili@gmail.com?subject=Angeltour%20Anfrage">
             Tour anfragen
           </a>
           <a class="btn-outline" style="border-color:var(--border);color:var(--ink);"
@@ -662,28 +637,6 @@
           </a>
         </div>
 
-        <div class="contact-cards">
-          <a class="contact-card" href="mailto:fishingtoursingeorgia@gmail.com?subject=Angeltour%20Anfrage">
-            <span class="contact-card-icon">📧</span>
-            <div class="contact-card-label">E-Mail</div>
-            <div class="contact-card-val">fishingtoursingeorgia@gmail.com</div>
-          </a>
-          <a class="contact-card" href="tel:+4915211084360">
-            <span class="contact-card-icon">📞</span>
-            <div class="contact-card-label">Deutschland</div>
-            <div class="contact-card-val">+49 1521 108 4360</div>
-          </a>
-          <a class="contact-card" href="tel:+995577134472">
-            <span class="contact-card-icon">📞</span>
-            <div class="contact-card-label">Georgien</div>
-            <div class="contact-card-val">+995 577 13 44 72</div>
-          </a>
-          <a class="contact-card" href="https://www.instagram.com/fishing_in_georgia/" target="_blank" rel="noopener">
-            <span class="contact-card-icon">📷</span>
-            <div class="contact-card-label">Instagram</div>
-            <div class="contact-card-val">@fishing_in_georgia</div>
-          </a>
-        </div>
       </div>
     </section>
 

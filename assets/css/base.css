@@ -137,6 +137,18 @@ p {
   white-space: nowrap;
 }
 
+.service-status {
+  margin: 0 auto;
+  color: #ff6b6b;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1.25;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
 .nav {
   display: flex;
   align-items: center;
@@ -457,6 +469,10 @@ p {
     align-items: center;
     flex-direction: row;
     gap: 16px;
+  }
+
+  .service-status {
+    display: none;
   }
 
   .nav {
