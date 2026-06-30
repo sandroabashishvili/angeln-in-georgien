@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
   <title>Kontakt – Angeln in Georgien</title>
-  <meta name="description" content="Kontakt für private Angelreisen nach Georgien: Anfrage per E-Mail, Telefon oder Instagram. Termine, Route und Preis werden persönlich abgestimmt.">
+  <meta name="description" content="Kontakt für private Angelreisen nach Georgien: Anfrage per E-Mail oder Telefon. Termine, Route und Preis werden persönlich abgestimmt.">
   <link rel="canonical" href="https://sandroabashishvili.github.io/angeln-in-georgien/contact.html">
   <link rel="alternate" hreflang="de" href="https://sandroabashishvili.github.io/angeln-in-georgien/contact.html">
 
@@ -19,10 +19,10 @@
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Kontakt – Angeln in Georgien">
-  <meta name="twitter:description" content="Kontakt für private Angelreisen nach Georgien.">
+  <meta name="twitter:description" content="Kontakt für private Angelreisen nach Georgien per E-Mail oder Telefon.">
   <meta name="twitter:image" content="https://sandroabashishvili.github.io/angeln-in-georgien/assets/img/hero-georgia-fishing.webp">
 
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f5f0e8">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#0d1a0f">
   <meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#0d1a0f">
 
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
@@ -69,9 +69,9 @@
 
     .contact-layout {
       display: grid;
-      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
       gap: 26px;
-      align-items: start;
+      align-items: stretch;
     }
 
     .contact-panel,
@@ -83,6 +83,8 @@
     }
 
     .contact-panel {
+      display: grid;
+      align-content: center;
       padding: 30px;
     }
 
@@ -109,13 +111,16 @@
 
     .contact-methods {
       display: grid;
-      gap: 14px;
+      grid-template-rows: repeat(2, minmax(0, 1fr));
+      gap: 18px;
     }
 
     .contact-method {
       display: grid;
       gap: 8px;
-      padding: 22px;
+      align-content: center;
+      min-height: 154px;
+      padding: 24px;
       text-decoration: none;
       color: var(--ink);
       transition: transform .16s, border-color .16s;
@@ -198,16 +203,6 @@
             <small>Telefon Deutschland</small>
             <strong>+49 1521 108 4360</strong>
             <span>Für kurze Rückfragen oder ein erstes Gespräch.</span>
-          </a>
-          <a class="contact-method" href="tel:+995577134472">
-            <small>Telefon Georgien</small>
-            <strong>+995 577 13 44 72</strong>
-            <span>Kontakt für Abstimmungen vor Ort in Georgien.</span>
-          </a>
-          <a class="contact-method" href="https://www.instagram.com/fishing_in_georgia/" target="_blank" rel="noopener">
-            <small>Instagram</small>
-            <strong>@fishing_in_georgia</strong>
-            <span>Für Eindrücke, kurze Nachrichten und aktuelle Vorschauen.</span>
           </a>
         </div>
       </div>
