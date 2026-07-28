@@ -73,4 +73,5 @@ gebucht und müssen individuell geklärt werden.
 Aleksandre (Sandro) Abashishvili
 
 [Portfolio](https://sandro-abashishvili.sandroabashishvili.chatgpt.site/) ·
-[GitHub](https://github.com/sandroabashishvili)
+[GitHub](https://github.com/sandroabashishvili) ·
+[LinkedIn](https://www.linkedin.com/in/aleksandre-abashishvili-03417617a/)
