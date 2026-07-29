@@ -10,7 +10,7 @@
   if (window.__AIG_BOOTED__) return;
   window.__AIG_BOOTED__ = true;
 
-  const __VER__ = '2026-05-17';
+  const __VER__ = '2026-07-29';
 
   if (!window.__AIG_BASE__) {
     const script = document.currentScript || document.querySelector('script[src*="assets/js/includes.js"]');
@@ -25,7 +25,7 @@
     const imgBase = `${base}assets/img/`;
     const links = [
       { rel: 'icon', type: 'image/svg+xml', href: `${imgBase}favicon.svg` },
-      { rel: 'alternate icon', href: `${imgBase}favicon.ico`, sizes: 'any' },
+      { rel: 'alternate icon', type: 'image/png', href: `${imgBase}favicon-light.png` },
       { rel: 'icon', type: 'image/png', href: `${imgBase}favicon-light.png`, media: '(prefers-color-scheme: light)' },
       { rel: 'icon', type: 'image/png', href: `${imgBase}favicon-dark.png`,  media: '(prefers-color-scheme: dark)'  }
     ];
@@ -69,11 +69,30 @@
         toggle.setAttribute('aria-expanded', 'false');
       }
     });
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && scopeEl.classList.contains('nav-open')) {
+        scopeEl.classList.remove('nav-open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.focus();
+      }
+    });
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 760) {
+        scopeEl.classList.remove('nav-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
   }
 
   Promise.all([
-    fetch(new URL(`partials/header.html?v=${__VER__}`, base)).then(r => r.text()),
-    fetch(new URL(`partials/footer.html?v=${__VER__}`, base)).then(r => r.text())
+    fetch(new URL(`partials/header.html?v=${__VER__}`, base)).then(r => {
+      if (!r.ok) throw new Error(`Header konnte nicht geladen werden (${r.status})`);
+      return r.text();
+    }),
+    fetch(new URL(`partials/footer.html?v=${__VER__}`, base)).then(r => {
+      if (!r.ok) throw new Error(`Footer konnte nicht geladen werden (${r.status})`);
+      return r.text();
+    })
   ]).then(([h, f]) => {
     const headerEl = document.getElementById('site-header');
     const footerEl = document.getElementById('site-footer');

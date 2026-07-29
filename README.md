@@ -2,8 +2,8 @@
 
 ![Angeln in Georgien – private saisonale Angelreisen](assets/img/hero-georgia-fishing.webp)
 
-Eine responsive deutschsprachige Website für privat organisierte,
-saisonabhängige Angelreisen nach Georgien.
+Eine responsive deutschsprachige Präsentationsseite für ein persönliches
+Reiseprojekt rund um mögliche saisonale Angelreisen nach Georgien.
 
 **Live:** [sandroabashishvili.github.io/angeln-in-georgien](https://sandroabashishvili.github.io/angeln-in-georgien/)
 
@@ -18,6 +18,7 @@ saisonabhängige Angelreisen nach Georgien.
 - Canonical URLs, Open Graph, Twitter Cards und strukturierte Daten
 - Favicons, `robots.txt`, Sitemap und eigene 404-Seite
 - keine Analytics- oder Tracking-Skripte
+- keine extern geladenen Webfonts
 
 ## Technik
 
@@ -64,9 +65,9 @@ Danach `http://127.0.0.1:8000/` öffnen.
 
 ## Status und Grenzen
 
-Die Website ist als statische Präsentationsseite veröffentlicht. Verfügbarkeit,
-Terminabsprachen und konkrete Reiseleistungen werden nicht automatisiert
-gebucht und müssen individuell geklärt werden.
+Die Website ist als statische Präsentationsseite veröffentlicht. Das
+Reiseprojekt ist derzeit pausiert; es werden keine konkreten Reisetermine
+angeboten. Unverbindliche Rückfragen sind weiterhin per E-Mail möglich.
 
 ## Autor
 
