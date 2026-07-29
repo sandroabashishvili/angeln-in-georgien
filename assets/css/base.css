@@ -257,7 +257,7 @@ p {
 
 .site-footer {
   display: grid;
-  grid-template-columns: minmax(280px, 1fr) minmax(220px, auto);
+  grid-template-columns: minmax(250px, 1fr) minmax(280px, 1fr) minmax(180px, auto);
   gap: 28px;
   align-items: start;
   padding: 34px 0;
@@ -286,6 +286,38 @@ p {
   gap: 14px;
   font-size: 14px;
   font-weight: 700;
+}
+
+.creator-credit {
+  display: grid;
+  gap: 7px;
+}
+
+.creator-credit strong {
+  color: var(--on-dark);
+  font-family: var(--serif);
+  font-size: 16px;
+}
+
+.creator-credit > span {
+  font-size: 13px;
+}
+
+.creator-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.creator-links a {
+  color: var(--gold-strong);
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.creator-links a:hover {
+  text-decoration: underline;
 }
 
 .footer-socials a {
