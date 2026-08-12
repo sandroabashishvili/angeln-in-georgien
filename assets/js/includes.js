@@ -10,7 +10,7 @@
   if (window.__AIG_BOOTED__) return;
   window.__AIG_BOOTED__ = true;
 
-  const __VER__ = '2026-07-29';
+  const __VER__ = '2026-08-12';
 
   if (!window.__AIG_BASE__) {
     const script = document.currentScript || document.querySelector('script[src*="assets/js/includes.js"]');
@@ -18,6 +18,108 @@
     window.__AIG_BASE__ = new URL('../../', scriptUrl).href;
   }
   const base = window.__AIG_BASE__;
+
+
+  const ANALYTICS_ID = 'G-SRE45VF2DF';
+  const CONSENT_KEY = 'aigAnalyticsConsent';
+  let consentBanner = null;
+  let analyticsLoaded = false;
+
+  function loadGoogleAnalytics() {
+    if (analyticsLoaded || document.querySelector(`script[data-analytics-id="${ANALYTICS_ID}"]`)) return;
+    analyticsLoaded = true;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function(){ window.dataLayer.push(arguments); };
+    window.gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied'
+    });
+    window.gtag('consent', 'update', {
+      analytics_storage: 'granted',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied'
+    });
+    window.gtag('js', new Date());
+    window.gtag('config', ANALYTICS_ID, {
+      allow_google_signals: false,
+      allow_ad_personalization_signals: false
+    });
+    const script = document.createElement('script');
+    script.async = true;
+    script.dataset.analyticsId = ANALYTICS_ID;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(ANALYTICS_ID)}`;
+    document.head.appendChild(script);
+  }
+
+  function removeAnalyticsCookies() {
+    document.cookie.split(';').forEach(part => {
+      const name = part.split('=')[0].trim();
+      if (!/^_ga(?:_|$)/.test(name)) return;
+      const expiry = 'expires=Thu, 01 Jan 1970 00:00:00 GMT';
+      document.cookie = `${name}=;${expiry};path=/;SameSite=Lax`;
+      document.cookie = `${name}=;${expiry};path=/;domain=${location.hostname};SameSite=Lax`;
+      document.cookie = `${name}=;${expiry};path=/;domain=.${location.hostname};SameSite=Lax`;
+    });
+  }
+
+  function saveConsent(value) {
+    try { localStorage.setItem(CONSENT_KEY, value); } catch (_) {}
+    if (value === 'granted') {
+      loadGoogleAnalytics();
+    } else {
+      if (typeof window.gtag === 'function') {
+        window.gtag('consent', 'update', {
+          analytics_storage: 'denied',
+          ad_storage: 'denied',
+          ad_user_data: 'denied',
+          ad_personalization: 'denied'
+        });
+      }
+      removeAnalyticsCookies();
+    }
+    consentBanner?.remove();
+    consentBanner = null;
+  }
+
+  function showConsentBanner() {
+    consentBanner?.remove();
+    consentBanner = document.createElement('aside');
+    consentBanner.className = 'consent-banner';
+    consentBanner.setAttribute('role', 'dialog');
+    consentBanner.setAttribute('aria-modal', 'true');
+    consentBanner.setAttribute('aria-labelledby', 'consent-title');
+    consentBanner.innerHTML = `
+      <div class="consent-copy">
+        <strong id="consent-title">Optionale Statistik</strong>
+        <p>Mit Ihrer Einwilligung verwenden wir Google Analytics, um die Nutzung dieser Website besser zu verstehen. Ohne Zustimmung wird der Google-Tag nicht geladen. <a href="${new URL('legal/datenschutz.html', base).href}">Mehr erfahren</a></p>
+      </div>
+      <div class="consent-actions">
+        <button type="button" class="consent-button consent-decline" data-consent="denied">Ablehnen</button>
+        <button type="button" class="consent-button consent-accept" data-consent="granted">Statistik erlauben</button>
+      </div>`;
+    consentBanner.addEventListener('click', event => {
+      const button = event.target.closest('[data-consent]');
+      if (button) saveConsent(button.dataset.consent);
+    });
+    document.body.appendChild(consentBanner);
+    consentBanner.querySelector('[data-consent="denied"]')?.focus();
+  }
+
+  function initAnalyticsConsent() {
+    let consent = null;
+    try { consent = localStorage.getItem(CONSENT_KEY); } catch (_) {}
+    if (consent === 'granted') loadGoogleAnalytics();
+    if (consent !== 'granted' && consent !== 'denied') showConsentBanner();
+    document.addEventListener('click', event => {
+      const settings = event.target.closest('[data-consent-settings]');
+      if (!settings) return;
+      event.preventDefault();
+      showConsentBanner();
+    });
+  }
 
   function ensureFavicons() {
     const head = document.head;
@@ -83,6 +185,8 @@
       }
     });
   }
+
+  initAnalyticsConsent();
 
   Promise.all([
     fetch(new URL(`partials/header.html?v=${__VER__}`, base)).then(r => {

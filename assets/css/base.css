@@ -344,6 +344,91 @@ p {
   color: var(--gold-strong);
 }
 
+
+.footer-link-button {
+  appearance: none;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: rgba(246, 240, 229, 0.66);
+  font: inherit;
+  cursor: pointer;
+}
+
+.footer-link-button:hover {
+  color: var(--gold-strong);
+}
+
+.consent-banner {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  left: 18px;
+  z-index: 100;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 22px;
+  align-items: center;
+  width: min(920px, calc(100% - 36px));
+  margin-inline: auto;
+  padding: 20px;
+  border: 1px solid rgba(231, 184, 92, 0.4);
+  border-radius: var(--radius);
+  background: var(--forest-950);
+  color: var(--on-dark);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.34);
+}
+
+.consent-copy {
+  display: grid;
+  gap: 5px;
+}
+
+.consent-copy strong {
+  color: var(--gold-strong);
+  font-family: var(--serif);
+  font-size: 18px;
+}
+
+.consent-copy p {
+  color: rgba(246, 240, 229, 0.78);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.consent-copy a {
+  color: var(--gold-strong);
+}
+
+.consent-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.consent-button {
+  min-height: 44px;
+  border: 1px solid rgba(246, 240, 229, 0.28);
+  border-radius: 999px;
+  padding: 10px 16px;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.consent-decline {
+  background: transparent;
+  color: var(--on-dark);
+}
+
+.consent-accept {
+  border-color: var(--gold);
+  background: var(--gold);
+  color: var(--forest-950);
+}
+
 .eyebrow {
   display: inline-flex;
   align-items: center;
@@ -568,6 +653,18 @@ p {
     justify-content: flex-start;
   }
 
+
+  .consent-banner {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 18px;
+  }
+
+  .consent-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
   .section {
     padding: 58px 0;
   }
@@ -589,6 +686,7 @@ p {
 @media print {
   .site-header-shell,
   .site-footer-shell,
+  .consent-banner,
   noscript {
     display: none !important;
   }
