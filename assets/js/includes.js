@@ -127,6 +127,8 @@
     const imgBase = `${base}assets/img/`;
     const links = [
       { rel: 'icon', type: 'image/svg+xml', href: `${imgBase}favicon.svg` },
+      { rel: 'apple-touch-icon', sizes: '180x180', href: `${imgBase}apple-touch-icon.png` },
+      { rel: 'manifest', href: `${base}manifest.webmanifest` },
       { rel: 'alternate icon', type: 'image/png', href: `${imgBase}favicon-light.png` },
       { rel: 'icon', type: 'image/png', href: `${imgBase}favicon-light.png`, media: '(prefers-color-scheme: light)' },
       { rel: 'icon', type: 'image/png', href: `${imgBase}favicon-dark.png`,  media: '(prefers-color-scheme: dark)'  }

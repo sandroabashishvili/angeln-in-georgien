@@ -1,0 +1,21 @@
+{
+  "name": "Angeln in Georgien",
+  "short_name": "Angeln Georgien",
+  "start_url": "/angeln-in-georgien/",
+  "scope": "/angeln-in-georgien/",
+  "display": "standalone",
+  "background_color": "#f3f7f3",
+  "theme_color": "#184c3b",
+  "icons": [
+    {
+      "src": "assets/img/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
