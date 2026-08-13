@@ -76,7 +76,7 @@
 }
 
 .aig-home .btn-primary {
-  background: var(--gold);
+  background: var(--gold-strong);
   color: var(--forest-950);
 }
 
@@ -86,7 +86,7 @@
 }
 
 .aig-home .guarantee-bar {
-  background: var(--gold);
+  background: var(--gold-strong);
   color: var(--forest-950);
   padding: 16px 24px;
 }
@@ -246,4 +246,16 @@
   .aig-home .contact-card {
     min-height: auto;
   }
+}
+
+.aig-home .dark-section .section-title {
+  color: var(--on-dark);
+}
+
+.aig-home .dark-section .section-intro {
+  color: rgba(246, 240, 229, 0.78);
+}
+
+.aig-home .dark-section .section-label {
+  color: var(--gold-strong);
 }
