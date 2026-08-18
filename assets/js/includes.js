@@ -2,7 +2,7 @@
 // File: includes.js
 // Folder: portfolio_projects/angeln-in-georgien/assets/js
 // Created date: 2025-10-12
-// Last updated date: 2026-08-18
+// Last updated date: 2026-08-19
 // Author: Codex
 // Purpose: Load shared header/footer partials and normalize root-relative links.
 (function(){
@@ -10,7 +10,7 @@
   if (window.__AIG_BOOTED__) return;
   window.__AIG_BOOTED__ = true;
 
-  const __VER__ = '2026-08-18';
+  const __VER__ = '2026-08-19';
 
   if (!window.__AIG_BASE__) {
     const script = document.currentScript || document.querySelector('script[src*="assets/js/includes.js"]');
@@ -87,7 +87,7 @@
     consentBanner.innerHTML = `
       <div class="consent-copy">
         <strong id="consent-title">Optionale Statistik</strong>
-        <p>Mit Ihrer Einwilligung verwenden wir Google Analytics für die vollständige Nutzungsanalyse. Ohne Zustimmung werden keine Analytics-Cookies gesetzt; Google kann cookielose Messsignale erhalten. <a href="${new URL('legal/datenschutz.html', base).href}">Mehr erfahren</a></p>
+        <p>Mit Ihrer Einwilligung verwenden wir Google Analytics für die vollständige Nutzungsanalyse. Ohne Zustimmung werden keine Analytics-Cookies gesetzt; Google kann cookielose Messsignale erhalten. <a href="${new URL('legal/datenschutz/', base).href}">Mehr erfahren</a></p>
       </div>
       <div class="consent-actions">
         <button type="button" class="consent-button consent-decline" data-consent="denied">Ablehnen</button>
@@ -137,7 +137,11 @@
     scopeEl.querySelectorAll('a[data-root]').forEach(a => {
       const raw = a.getAttribute('href') || '';
       if (/^(https?:|mailto:|tel:)/i.test(raw)) return;
-      if (/^(\.\/|\.\.\/)/.test(raw)) return;
+      if (raw === './' || raw === '.') {
+        a.setAttribute('href', base);
+        return;
+      }
+      if (/^\.\.\//.test(raw)) return;
       a.setAttribute('href', new URL(raw, base).href);
     });
   }
@@ -145,6 +149,7 @@
   function markCurrent(scopeEl) {
     const current = location.href.replace(/\/index\.html$/, '/');
     scopeEl.querySelectorAll('a[data-root]').forEach(a => {
+      a.removeAttribute('aria-current');
       const target = a.href.replace(/\/index\.html$/, '/');
       if (target === current) {
         a.setAttribute('aria-current', 'page');
