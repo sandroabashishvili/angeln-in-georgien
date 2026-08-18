@@ -20,7 +20,7 @@
   const base = window.__AIG_BASE__;
 
 
-  const ANALYTICS_ID = 'G-SRE45VF2DF';
+  const ANALYTICS_ID = 'G-BMKYWEPNHB';
   const CONSENT_KEY = 'aigAnalyticsConsent';
   let consentBanner = null;
   let analyticsLoaded = false;
