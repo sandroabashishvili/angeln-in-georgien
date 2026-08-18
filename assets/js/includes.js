@@ -2,7 +2,7 @@
 // File: includes.js
 // Folder: portfolio_projects/angeln-in-georgien/assets/js
 // Created date: 2025-10-12
-// Last updated date: 2026-05-17
+// Last updated date: 2026-08-18
 // Author: Codex
 // Purpose: Load shared header/footer partials and normalize root-relative links.
 (function(){
@@ -10,7 +10,7 @@
   if (window.__AIG_BOOTED__) return;
   window.__AIG_BOOTED__ = true;
 
-  const __VER__ = '2026-08-12';
+  const __VER__ = '2026-08-18';
 
   if (!window.__AIG_BASE__) {
     const script = document.currentScript || document.querySelector('script[src*="assets/js/includes.js"]');
@@ -19,13 +19,22 @@
   }
   const base = window.__AIG_BASE__;
 
-
   const ANALYTICS_ID = 'G-BMKYWEPNHB';
   const CONSENT_KEY = 'aigAnalyticsConsent';
   let consentBanner = null;
   let analyticsLoaded = false;
 
-  function loadGoogleAnalytics() {
+  function setAnalyticsConsent(value) {
+    if (typeof window.gtag !== 'function') return;
+    window.gtag('consent', 'update', {
+      analytics_storage: value,
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied'
+    });
+  }
+
+  function loadGoogleAnalytics(savedConsent) {
     if (analyticsLoaded || document.querySelector(`script[data-analytics-id="${ANALYTICS_ID}"]`)) return;
     analyticsLoaded = true;
     window.dataLayer = window.dataLayer || [];
@@ -36,12 +45,7 @@
       ad_user_data: 'denied',
       ad_personalization: 'denied'
     });
-    window.gtag('consent', 'update', {
-      analytics_storage: 'granted',
-      ad_storage: 'denied',
-      ad_user_data: 'denied',
-      ad_personalization: 'denied'
-    });
+    if (savedConsent === 'granted') setAnalyticsConsent('granted');
     window.gtag('js', new Date());
     window.gtag('config', ANALYTICS_ID, {
       allow_google_signals: false,
@@ -67,19 +71,8 @@
 
   function saveConsent(value) {
     try { localStorage.setItem(CONSENT_KEY, value); } catch (_) {}
-    if (value === 'granted') {
-      loadGoogleAnalytics();
-    } else {
-      if (typeof window.gtag === 'function') {
-        window.gtag('consent', 'update', {
-          analytics_storage: 'denied',
-          ad_storage: 'denied',
-          ad_user_data: 'denied',
-          ad_personalization: 'denied'
-        });
-      }
-      removeAnalyticsCookies();
-    }
+    setAnalyticsConsent(value);
+    if (value === 'denied') removeAnalyticsCookies();
     consentBanner?.remove();
     consentBanner = null;
   }
@@ -94,7 +87,7 @@
     consentBanner.innerHTML = `
       <div class="consent-copy">
         <strong id="consent-title">Optionale Statistik</strong>
-        <p>Mit Ihrer Einwilligung verwenden wir Google Analytics, um die Nutzung dieser Website besser zu verstehen. Ohne Zustimmung wird der Google-Tag nicht geladen. <a href="${new URL('legal/datenschutz.html', base).href}">Mehr erfahren</a></p>
+        <p>Mit Ihrer Einwilligung verwenden wir Google Analytics für die vollständige Nutzungsanalyse. Ohne Zustimmung werden keine Analytics-Cookies gesetzt; Google kann cookielose Messsignale erhalten. <a href="${new URL('legal/datenschutz.html', base).href}">Mehr erfahren</a></p>
       </div>
       <div class="consent-actions">
         <button type="button" class="consent-button consent-decline" data-consent="denied">Ablehnen</button>
@@ -111,7 +104,7 @@
   function initAnalyticsConsent() {
     let consent = null;
     try { consent = localStorage.getItem(CONSENT_KEY); } catch (_) {}
-    if (consent === 'granted') loadGoogleAnalytics();
+    loadGoogleAnalytics(consent);
     if (consent !== 'granted' && consent !== 'denied') showConsentBanner();
     document.addEventListener('click', event => {
       const settings = event.target.closest('[data-consent-settings]');
