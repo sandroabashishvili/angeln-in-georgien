@@ -5,7 +5,7 @@
 Eine responsive deutschsprachige Präsentationsseite für ein persönliches
 Reiseprojekt rund um mögliche saisonale Angelreisen nach Georgien.
 
-**Live:** [sandroabashishvili.github.io/angeln-in-georgien](https://sandroabashishvili.github.io/angeln-in-georgien/)
+**Live:** [sandro-abashishvili.de/angeln-in-georgien](https://sandro-abashishvili.de/angeln-in-georgien/)
 
 ## Inhalt und Funktionen
 
@@ -73,6 +73,6 @@ angeboten. Unverbindliche Rückfragen sind weiterhin per E-Mail möglich.
 
 Sandro Abashishvili
 
-[Portfolio](https://sandroabashishvili.github.io/) ·
+[Portfolio](https://sandro-abashishvili.de/) ·
 [GitHub](https://github.com/sandroabashishvili) ·
 [LinkedIn](https://www.linkedin.com/in/aleksandre-abashishvili-03417617a/)
