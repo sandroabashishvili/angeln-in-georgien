@@ -20,7 +20,9 @@
   const base = window.__AIG_BASE__;
 
   const ANALYTICS_ID = 'G-BMKYWEPNHB';
-  const CONSENT_KEY = 'aigAnalyticsConsent';
+  const CONSENT_KEY = 'sandroAnalyticsConsentV1';
+  const PRODUCTION_HOST = 'sandro-abashishvili.de';
+  document.documentElement.dataset.analyticsConsentMode = 'basic';
   let consentBanner = null;
   let analyticsLoaded = false;
 
@@ -34,8 +36,8 @@
     });
   }
 
-  function loadGoogleAnalytics(savedConsent) {
-    if (analyticsLoaded || document.querySelector(`script[data-analytics-id="${ANALYTICS_ID}"]`)) return;
+  function loadGoogleAnalytics() {
+    if (location.hostname !== PRODUCTION_HOST || analyticsLoaded || document.querySelector(`script[data-analytics-id="${ANALYTICS_ID}"]`)) return;
     analyticsLoaded = true;
     window.dataLayer = window.dataLayer || [];
     window.gtag = window.gtag || function(){ window.dataLayer.push(arguments); };
@@ -45,7 +47,7 @@
       ad_user_data: 'denied',
       ad_personalization: 'denied'
     });
-    if (savedConsent === 'granted') setAnalyticsConsent('granted');
+    setAnalyticsConsent('granted');
     window.gtag('js', new Date());
     window.gtag('config', ANALYTICS_ID, {
       allow_google_signals: false,
@@ -71,8 +73,11 @@
 
   function saveConsent(value) {
     try { localStorage.setItem(CONSENT_KEY, value); } catch (_) {}
-    setAnalyticsConsent(value);
-    if (value === 'denied') removeAnalyticsCookies();
+    if (value === 'granted') loadGoogleAnalytics();
+    else {
+      setAnalyticsConsent('denied');
+      removeAnalyticsCookies();
+    }
     consentBanner?.remove();
     consentBanner = null;
   }
@@ -87,7 +92,7 @@
     consentBanner.innerHTML = `
       <div class="consent-copy">
         <strong id="consent-title">Optionale Statistik</strong>
-        <p>Mit Ihrer Einwilligung verwenden wir Google Analytics für die vollständige Nutzungsanalyse. Ohne Zustimmung werden keine Analytics-Cookies gesetzt; Google kann cookielose Messsignale erhalten. <a href="${new URL('legal/datenschutz/', base).href}">Mehr erfahren</a></p>
+        <p>Mit Ihrer Einwilligung verwenden wir Google Analytics für die Nutzungsanalyse. Der Google-Tag wird erst nach Ihrer Zustimmung geladen. <a href="${new URL('legal/datenschutz/', base).href}">Mehr erfahren</a></p>
       </div>
       <div class="consent-actions">
         <button type="button" class="consent-button consent-decline" data-consent="denied">Ablehnen</button>
@@ -104,7 +109,7 @@
   function initAnalyticsConsent() {
     let consent = null;
     try { consent = localStorage.getItem(CONSENT_KEY); } catch (_) {}
-    loadGoogleAnalytics(consent);
+    if (consent === 'granted') loadGoogleAnalytics();
     if (consent !== 'granted' && consent !== 'denied') showConsentBanner();
     document.addEventListener('click', event => {
       const settings = event.target.closest('[data-consent-settings]');
